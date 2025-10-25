@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "my-counter.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "This is a counter web component.\nTODO: Are this JSDoc comments necessary for CEM?",
+          "name": "MyCounter",
+          "members": [
+            {
+              "kind": "field",
+              "name": "#count",
+              "privacy": "private",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "#decBtn",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "#span",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "decrement"
+            },
+            {
+              "kind": "method",
+              "name": "increment"
+            },
+            {
+              "kind": "method",
+              "name": "#update",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "delta"
+                }
+              ]
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "initial count",
+              "name": "count",
+              "default": "3",
+              "kind": "field"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "initial count",
+              "name": "count",
+              "default": "3"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "my-counter",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "my-counter",
+          "declaration": {
+            "name": "MyCounter",
+            "module": "my-counter.js"
+          }
+        }
+      ]
+    }
+  ]
+}
