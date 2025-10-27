@@ -40,7 +40,7 @@ template.innerHTML = html`
  * @tag my-counter
  */
 class MyCounter extends HTMLElement {
-  #count = 0;
+  count = 3;
   #decBtn;
   #span;
 

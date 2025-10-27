@@ -8,17 +8,16 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "This is a counter web component.\nTODO: Are this JSDoc comments necessary for CEM?",
+          "description": "This is a counter web component.",
           "name": "MyCounter",
           "members": [
             {
               "kind": "field",
-              "name": "#count",
-              "privacy": "private",
+              "name": "count",
               "type": {
                 "text": "number"
               },
-              "default": "0"
+              "default": "3"
             },
             {
               "kind": "field",
@@ -47,15 +46,6 @@
                   "name": "delta"
                 }
               ]
-            },
-            {
-              "type": {
-                "text": "number"
-              },
-              "description": "initial count",
-              "name": "count",
-              "default": "3",
-              "kind": "field"
             }
           ],
           "attributes": [
