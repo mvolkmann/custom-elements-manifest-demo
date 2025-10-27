@@ -61,7 +61,7 @@ class MyCounter extends HTMLElement {
   }
 
   decrement() {
-    if (this.#count > 0) this.#update(-1);
+    if (this.count > 0) this.#update(-1);
   }
 
   increment() {
@@ -69,9 +69,9 @@ class MyCounter extends HTMLElement {
   }
 
   #update(delta) {
-    this.#count += delta;
-    this.#span.textContent = this.#count;
-    this.#decBtn.toggleAttribute("disabled", this.#count === 0);
+    this.count += delta;
+    this.#span.textContent = this.count;
+    this.#decBtn.toggleAttribute("disabled", this.count === 0);
   }
 }
 
