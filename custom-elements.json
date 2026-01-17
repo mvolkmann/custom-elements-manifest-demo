@@ -17,7 +17,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "3"
+              "default": "3",
+              "description": "current count"
             },
             {
               "kind": "field",
@@ -54,8 +55,7 @@
                 "text": "number"
               },
               "description": "initial count",
-              "name": "count",
-              "default": "3"
+              "name": "count"
             }
           ],
           "superclass": {
