@@ -6,15 +6,12 @@
     "cem:watch": "custom-elements-manifest analyze --watch",
     "dev": "vite",
     "lint": "oxlint",
-    "reinstall": "rm -rf node_modules bun.lock && bun install"
-  },
-  "dependencies": {
-    "hono": "^4.10.3"
+    "reinstall": "rm -rf node_modules package-lock.json && npm install"
   },
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.10.10",
-    "oxlint": "^1.24.0",
-    "vite": "^7.1.12"
+    "@custom-elements-manifest/analyzer": "^0.11.0",
+    "oxlint": "^1.39.0",
+    "vite": "^7.3.1"
   },
   "customElements": "custom-elements.json"
 }
