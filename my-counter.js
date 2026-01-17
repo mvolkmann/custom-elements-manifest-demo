@@ -41,9 +41,13 @@ template.innerHTML = html`
  * @tag my-counter
  */
 class MyCounter extends HTMLElement {
-  count = 3;
+  #count = 3;
   #decBtn;
   #span;
+
+  static get observedAttributes() {
+    return ["count"];
+  }
 
   constructor() {
     super();
@@ -57,22 +61,33 @@ class MyCounter extends HTMLElement {
     decBtn.addEventListener("click", () => this.decrement());
     incBtn.addEventListener("click", () => this.increment());
     this.#span = dom.querySelector("span");
-    this.#update(0);
+    this.#span.textContent = this.count;
     this.shadowRoot.replaceChildren(dom);
   }
 
+  attributeChangedCallback(attrName, _oldValue, newValue) {
+    if (attrName === "count") this.count = Number(newValue);
+  }
+
+  get count() {
+    return this.#count;
+  }
+
+  set count(value) {
+    if (value === this.#count) return;
+    if (!this.#span) return;
+    this.#count = value;
+    this.#span.textContent = this.count;
+    this.#decBtn.toggleAttribute("disabled", this.count === 0);
+    this.setAttribute("count", this.count);
+  }
+
   decrement() {
-    if (this.count > 0) this.#update(-1);
+    if (this.count > 0) this.count = this.#count - 1;
   }
 
   increment() {
-    this.#update(1);
-  }
-
-  #update(delta) {
-    this.count += delta;
-    this.#span.textContent = this.count;
-    this.#decBtn.toggleAttribute("disabled", this.count === 0);
+    this.count = this.#count + 1;
   }
 }
 
