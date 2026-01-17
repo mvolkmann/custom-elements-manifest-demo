@@ -13,12 +13,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "count",
+              "name": "#count",
+              "privacy": "private",
               "type": {
                 "text": "number"
               },
-              "default": "3",
-              "description": "current count"
+              "default": "3"
             },
             {
               "kind": "field",
@@ -31,31 +31,30 @@
               "privacy": "private"
             },
             {
+              "kind": "field",
+              "name": "count",
+              "type": {
+                "text": "number"
+              },
+              "description": "current count",
+              "default": "3"
+            },
+            {
               "kind": "method",
               "name": "decrement"
             },
             {
               "kind": "method",
               "name": "increment"
-            },
-            {
-              "kind": "method",
-              "name": "#update",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "delta"
-                }
-              ]
             }
           ],
           "attributes": [
             {
+              "name": "count",
               "type": {
                 "text": "number"
               },
-              "description": "initial count",
-              "name": "count"
+              "description": "initial count"
             }
           ],
           "superclass": {
